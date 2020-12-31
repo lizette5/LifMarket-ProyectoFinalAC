@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="6"
+    android:versionName="9.8"
+    android:installLocation="0"
+    android:compileSdkVersion="29"
+    android:compileSdkVersionCodename="10"
+    package="lif.market"
+    platformBuildVersionCode="6"
+    platformBuildVersionName="1092406528.000000">
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="29" />
+
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission
+        android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <uses-permission
+        android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission
+        android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <uses-permission
+        android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:theme="@ref/0x7f0f0005"
+        android:label="LifMarket"
+        android:icon="@ref/0x7f070187"
+        android:name="lif.market.config"
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:fullBackupContent="false"
+        android:usesCleartextTraffic="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@ref/0x7f090007" />
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="lif.market.CastOptionsProvider" />
+
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".SearchableActivity" />
+
+        <provider
+            android:name="lif.market.MySuggestionProvider"
+            android:exported="false"
+            android:authorities="lif.market.MySuggestionProvider" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <receiver
+            android:name="lif.market.widget_vistafb">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@ref/0x7f110004" />
+        </receiver>
+
+        <provider
+            android:name="lif.market.StickerContentProvider"
+            android:readPermission="com.whatsapp.sticker.READ"
+            android:enabled="false"
+            android:exported="true"
+            android:authorities="lif.market.stickercontentprovider" />
+
+        <service
+            android:name="lif.market.s_widget_vistafb"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.preinicio"
+            android:configChanges="0x4a0">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.appcreator24.com"
+                    android:pathPrefix="/open1318594/" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="www.appcreator24.com"
+                    android:pathPrefix="/open1318594/" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="join-app.net"
+                    android:pathPrefix="/a1318594/" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@ref/0x0103000f"
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:exported="false"
+            android:configChanges="0xfb0" />
+
+        <activity
+            android:name="lif.market.SearchableActivity"
+            android:launchMode="1">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@ref/0x7f110003" />
+        </activity>
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.ExpandedControlsActivity"
+            android:launchMode="2">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_qr"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_vistafb"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_url"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_html"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_video"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_video_exoplayer"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_video_pro"
+            android:configChanges="0x4a0"
+            android:windowSoftInputMode="0x20" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_radio"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscchats"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscchats_lista"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_menugrid" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_submenu" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_rss" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_rssdetalle" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_oficinas" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_chat_contra" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_chat"
+            android:configChanges="0x4a0"
+            android:windowSoftInputMode="0x10" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.preperfil"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.chat_perfil"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.guardarprimeravez" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.eliminarperfil" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.codigo" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.chat" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.contactar" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscador_form"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.cats" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscador" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_detalle" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_menu" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_mapa_web"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_and" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.finalizar" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.notifs"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.notifs_cats"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.privados"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.profile"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.fotogal"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscusus"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscvideos"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_buscvideo"
+            android:configChanges="0x4a0"
+            android:windowSoftInputMode="0x20" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_gal"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_gal_foto"
+            android:configChanges="0x4a0" />
+
+        <activity
+            android:label="LifMarket"
+            android:name="lif.market.t_card"
+            android:configChanges="0x4a0" />
+
+        <service
+            android:name="lif.market.s_cargar_icos" />
+
+        <service
+            android:name="lif.market.s_cargar_sliderheader" />
+
+        <service
+            android:name="lif.market.s_cargar_fondo" />
+
+        <service
+            android:name="lif.market.s_cargar_icos_gen" />
+
+        <service
+            android:name="lif.market.s_guardarperfil" />
+
+        <service
+            android:name="lif.market.s_mediaplayer_exo" />
+
+        <service
+            android:name="lif.market.RegistrationIntentService" />
+
+        <provider
+            android:name="lif.market.bd_provider"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="lif.market.bd_provider" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="lif.market.fileprovider"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@ref/0x7f110000" />
+        </provider>
+
+        <receiver
+            android:name="lif.market.alarma_rss" />
+
+        <service
+            android:name="lif.market.MyFcmListenerService">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="lif.market.MyInstanceIDListenerService">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:theme="@ref/0x01030010"
+            android:name="com.facebook.ads.AudienceNetworkActivity"
+            android:exported="false"
+            android:configChanges="0x4a0" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@ref/0x7f0e0103" />
+
+        <activity
+            android:theme="@ref/0x7f0f018c"
+            android:label="LifMarket"
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="0x5b0" />
+
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="@ref/0x7f0e0114" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="fbconnect"
+                    android:host="cct.lif.market" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:theme="@ref/0x0103000a"
+            android:name="com.adcolony.sdk.AdColonyInterstitialActivity"
+            android:configChanges="0x4a0"
+            android:hardwareAccelerated="true" />
+
+        <activity
+            android:theme="@ref/0x0103000a"
+            android:name="com.adcolony.sdk.AdColonyAdViewActivity"
+            android:configChanges="0x4a0"
+            android:hardwareAccelerated="true" />
+
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true">
+
+            <intent-filter
+                android:priority="-500">
+
+                <action
+                    android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.cast.framework.media.MediaNotificationService"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.cast.framework.ReconnectionService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.facebook.CustomTabMainActivity" />
+
+        <provider
+            android:name="com.facebook.internal.FacebookInitProvider"
+            android:exported="false"
+            android:authorities="lif.market.FacebookInitProvider" />
+
+        <receiver
+            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+            android:exported="false">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.appnext.core.AdsService"
+            android:multiprocess="true" />
+
+        <activity
+            android:theme="@ref/0x01030007"
+            android:name="com.appnext.ads.interstitial.InterstitialActivity"
+            android:multiprocess="true"
+            android:configChanges="0x4a0"
+            android:hardwareAccelerated="true" />
+
+        <activity
+            android:theme="@ref/0x01030007"
+            android:name="com.appnext.ads.fullscreen.FullscreenActivity"
+            android:multiprocess="true"
+            android:hardwareAccelerated="true" />
+
+        <activity
+            android:name="com.appnext.banners.BannerActivity"
+            android:screenOrientation="1" />
+
+        <provider
+            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+            android:exported="false"
+            android:authorities="lif.market.AudienceNetworkContentProvider" />
+
+        <activity
+            android:theme="@ref/0x01030010"
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:exported="false"
+            android:excludeFromRecents="true" />
+
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:exported="true" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false">
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:permission="android.permission.INSTALL_PACKAGES"
+            android:enabled="true"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+            android:exported="true">
+
+            <intent-filter
+                android:priority="-500">
+
+                <action
+                    android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:exported="false"
+            android:authorities="lif.market.firebaseinitprovider"
+            android:initOrder="100" />
+
+        <activity
+            android:theme="@ref/0x01030010"
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false" />
+
+        <activity
+            android:theme="@ref/0x0103000f"
+            android:name="com.startapp.sdk.adsbase.consent.ConsentActivity"
+            android:configChanges="0x5a0" />
+
+        <activity
+            android:theme="@ref/0x01030005"
+            android:name="com.startapp.sdk.ads.list3d.List3DActivity" />
+
+        <activity
+            android:theme="@ref/0x0103000f"
+            android:name="com.startapp.sdk.adsbase.activities.OverlayActivity"
+            android:configChanges="0x5a0" />
+
+        <activity
+            android:theme="@ref/0x01030005"
+            android:name="com.startapp.sdk.adsbase.activities.FullScreenActivity"
+            android:configChanges="0x5a0" />
+
+        <service
+            android:name="com.startapp.sdk.adsbase.InfoEventService" />
+
+        <service
+            android:name="com.startapp.sdk.adsbase.PeriodicJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name="com.startapp.sdk.adsbase.remoteconfig.BootCompleteListener">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:theme="@ref/0x01030007"
+            android:name="com.unity3d.services.ads.adunit.AdUnitActivity"
+            android:configChanges="0x40000fff"
+            android:hardwareAccelerated="true" />
+
+        <activity
+            android:theme="@ref/0x01030011"
+            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity"
+            android:configChanges="0x40000fff"
+            android:hardwareAccelerated="true" />
+
+        <activity
+            android:theme="@ref/0x01030011"
+            android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity"
+            android:configChanges="0x40000fff"
+            android:hardwareAccelerated="false" />
+
+        <activity
+            android:theme="@ref/0x01030007"
+            android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity"
+            android:configChanges="0x40000fff"
+            android:hardwareAccelerated="false" />
+
+        <service
+            android:name="com.appnext.base.services.OperationService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name="com.appnext.base.services.OperationJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true" />
+
+        <service
+            android:name="com.appnext.base.services.EventsJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.appnext.base.receivers.EventsReceiver" />
+
+        <receiver
+            android:name="com.appnext.base.receivers.AppnextBootReciever">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.appnext.core.ResultActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="1" />
+
+        <activity
+            android:name="com.appnext.core.result.ResultPageActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="1"
+            android:screenOrientation="1" />
+    </application>
+</manifest>

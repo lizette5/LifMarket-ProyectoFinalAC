@@ -1,0 +1,111 @@
+.class Lcom/facebook/share/internal/DeviceShareDialogFragment$2;
+.super Ljava/lang/Object;
+.source "DeviceShareDialogFragment.java"
+
+# interfaces
+.implements Lcom/facebook/GraphRequest$b;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/facebook/share/internal/DeviceShareDialogFragment;->az()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic a:Lcom/facebook/share/internal/DeviceShareDialogFragment;
+
+
+# direct methods
+.method constructor <init>(Lcom/facebook/share/internal/DeviceShareDialogFragment;)V
+    .registers 2
+
+    .line 197
+    iput-object p1, p0, Lcom/facebook/share/internal/DeviceShareDialogFragment$2;->a:Lcom/facebook/share/internal/DeviceShareDialogFragment;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Lcom/facebook/r;)V
+    .registers 6
+
+    .line 200
+    invoke-virtual {p1}, Lcom/facebook/r;->a()Lcom/facebook/FacebookRequestError;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_c
+
+    .line 202
+    iget-object p1, p0, Lcom/facebook/share/internal/DeviceShareDialogFragment$2;->a:Lcom/facebook/share/internal/DeviceShareDialogFragment;
+
+    invoke-static {p1, v0}, Lcom/facebook/share/internal/DeviceShareDialogFragment;->a(Lcom/facebook/share/internal/DeviceShareDialogFragment;Lcom/facebook/FacebookRequestError;)V
+
+    return-void
+
+    .line 206
+    :cond_c
+    invoke-virtual {p1}, Lcom/facebook/r;->b()Lorg/json/JSONObject;
+
+    move-result-object p1
+
+    .line 207
+    new-instance v0, Lcom/facebook/share/internal/DeviceShareDialogFragment$RequestState;
+
+    invoke-direct {v0}, Lcom/facebook/share/internal/DeviceShareDialogFragment$RequestState;-><init>()V
+
+    :try_start_15
+    const-string v1, "user_code"
+
+    .line 209
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/facebook/share/internal/DeviceShareDialogFragment$RequestState;->a(Ljava/lang/String;)V
+
+    const-string v1, "expires_in"
+
+    .line 210
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Lcom/facebook/share/internal/DeviceShareDialogFragment$RequestState;->a(J)V
+    :try_end_27
+    .catch Lorg/json/JSONException; {:try_start_15 .. :try_end_27} :catch_2d
+
+    .line 217
+    iget-object p1, p0, Lcom/facebook/share/internal/DeviceShareDialogFragment$2;->a:Lcom/facebook/share/internal/DeviceShareDialogFragment;
+
+    invoke-static {p1, v0}, Lcom/facebook/share/internal/DeviceShareDialogFragment;->a(Lcom/facebook/share/internal/DeviceShareDialogFragment;Lcom/facebook/share/internal/DeviceShareDialogFragment$RequestState;)V
+
+    return-void
+
+    .line 212
+    :catch_2d
+    iget-object p1, p0, Lcom/facebook/share/internal/DeviceShareDialogFragment$2;->a:Lcom/facebook/share/internal/DeviceShareDialogFragment;
+
+    new-instance v0, Lcom/facebook/FacebookRequestError;
+
+    const/4 v1, 0x0
+
+    const-string v2, ""
+
+    const-string v3, "Malformed server response"
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/facebook/FacebookRequestError;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lcom/facebook/share/internal/DeviceShareDialogFragment;->a(Lcom/facebook/share/internal/DeviceShareDialogFragment;Lcom/facebook/FacebookRequestError;)V
+
+    return-void
+.end method
